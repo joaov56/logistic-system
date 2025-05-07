@@ -14,13 +14,13 @@ const (
 )
 
 type Delivery struct {
-	ID          string
-	OrderID     string
-	CustomerID  string
-	Address     string
-	Status      Status
-	CreatedAt   time.Time
-	UpdatedAt   time.Time
+	ID          string    `gorm:"primaryKey;type:varchar(36)"`
+	OrderID     string    `gorm:"type:varchar(36);not null"`
+	CustomerID  string    `gorm:"type:varchar(36);not null"`
+	Address     string    `gorm:"type:text;not null"`
+	Status      Status    `gorm:"type:varchar(20);not null"`
+	CreatedAt   time.Time `gorm:"not null"`
+	UpdatedAt   time.Time `gorm:"not null"`
 	DeliveredAt *time.Time
 }
 
