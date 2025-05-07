@@ -89,3 +89,29 @@ The database schema is automatically created when the application starts.
 ## License
 
 MIT
+
+## Repository Structure
+
+```
+logistic-system/
+├── internal/                 # Private application code
+│   └── delivery/            # Delivery management module
+│       ├── application/     # Application services and use cases
+│       ├── domain/         # Domain models and business logic
+│       ├── infrastructure/ # External services implementation
+│       └── interfaces/     # API handlers and external interfaces
+├── pkg/                     # Public libraries that can be used by external applications
+├── test/                    # Integration and end-to-end tests
+├── main.go                  # Application entry point
+├── Dockerfile              # Container definition
+├── docker-compose.yml      # Local development environment
+├── go.mod                  # Go module definition
+└── go.sum                  # Go module checksums
+```
+
+The project follows a clean architecture pattern with clear separation of concerns:
+
+- **Domain Layer** (`internal/delivery/domain`): Contains the core business logic, entities, and business rules
+- **Application Layer** (`internal/delivery/application`): Implements use cases and orchestrates the domain layer
+- **Infrastructure Layer** (`internal/delivery/infrastructure`): Handles external concerns like database access and external services
+- **Interface Layer** (`internal/delivery/interfaces`): Manages HTTP endpoints and external communication
