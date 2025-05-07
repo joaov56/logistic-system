@@ -2,6 +2,8 @@ package domain
 
 import (
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type Status string
@@ -27,6 +29,7 @@ type Delivery struct {
 func NewDelivery(orderID, customerID, address string) *Delivery {
 	now := time.Now()
 	return &Delivery{
+		ID:         uuid.New().String(),
 		OrderID:    orderID,
 		CustomerID: customerID,
 		Address:    address,
