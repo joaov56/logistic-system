@@ -8,8 +8,8 @@ import (
 
 	"logistic-system/internal/delivery/application"
 	"logistic-system/internal/delivery/domain"
-	"logistic-system/internal/delivery/infrastructure"
-	"logistic-system/internal/delivery/interfaces"
+	"logistic-system/internal/delivery/infrastructure/repository"
+	"logistic-system/internal/delivery/infrastructure/routes"
 	"logistic-system/pkg/logger"
 
 	"github.com/gorilla/mux"
